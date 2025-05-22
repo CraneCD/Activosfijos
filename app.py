@@ -62,14 +62,14 @@ def draw_label(c, code, x, y):
     c.drawCentredString(x + label_w / 2, y + 0.18 * cm, code)
 
 # Streamlit UI
-st.title("Asset Label PDF Generator")
+st.title("Activos Fijos Etiquetas")
 
-codes_input = st.text_area("Enter one code per line:")
+codes_input = st.text_area("Ingrese un código de archivo por línea")
 if st.button("Generate PDF"):
     codes = [code.strip() for code in codes_input.splitlines() if code.strip()]
     if not codes:
-        st.error("Please enter at least one valid code.")
+        st.error("Ingrese por lo menos un código.")
     else:
         pdf_file = create_pdf(codes)
-        st.success("PDF generated successfully!")
-        st.download_button("Download PDF", pdf_file, file_name="labels.pdf", mime="application/pdf")
+        st.success("PDF generado")
+        st.download_button("Descargar PDF", pdf_file, file_name="etiquetas.pdf", mime="application/pdf")

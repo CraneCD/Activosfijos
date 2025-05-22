@@ -1,4 +1,3 @@
-tkinter
 reportlab
 pillow
-cairosvg 
+svglib
